@@ -13,8 +13,11 @@
 
     {{ form_end(form) }}
 
-{% endblock %}
+    <p>
+        <a href="{{ path('admin_payment_request') }}">Go to Admin</a>
+    </p>
 
+{% endblock %}
 
 {% block javascripts %}
     <script src="{{ asset('dist/front/app.js') }}"></script>

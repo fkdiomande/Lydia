@@ -14,7 +14,7 @@ use Ramsey\Uuid\Uuid;
 class PaymentRequestController extends AbstractController
 {
     /**
-     * @Route("/payment-request", name="payment_request")
+     * @Route("/payment/request", name="payment_request")
      * @param Request $request
      * @return Response
      * @throws \Exception

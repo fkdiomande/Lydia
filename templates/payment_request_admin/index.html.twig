@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment Requests Admin{% endblock %}
+
+{% block body %}
+    <h1>Payment Requests</h1>
+    <div id="container__payment-request-admin-dom-container"></div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        var PAYMENT_REQUESTS = [
+            {% for paymentRequest in paymentRequests %}
+                {
+                  firstname: "{{ paymentRequest.firstname }}",
+                  lastname: "{{ paymentRequest.lastname }}",
+                  email: "{{ paymentRequest.email }}",
+                  amount: "{{ paymentRequest.amount }}",
+                  createdAt: "{{ paymentRequest.createdAt | date('Y/m/d') }}",
+                  requestUuid: "{{ paymentRequest.requestUuid }}",
+                },
+            {% endfor %}
+        ];
+        var VENDOR_TOKEN = "{{ vendorToken }}";
+        var API_REQUEST_STATE_URL = "{{ apiRequestStateUrl }}";
+    </script>
+
+    <script src="{{ asset('dist/admin/app.js') }}"></script>
+{% endblock %}
