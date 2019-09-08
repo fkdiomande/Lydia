@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment Request{% endblock %}
+
+{% block body %}
+    <h1>Payment Request</h1>
+
+    {{ form_start(form, {'action': path('payment_request'), 'method': 'post', 'attr': {'id': 'payment-request-form'}}) }}
+
+        {{ form_widget(form) }}
+
+        <button type="submit">Send request</button>
+
+    {{ form_end(form) }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('dist/front/app.js') }}"></script>
+{% endblock %}
